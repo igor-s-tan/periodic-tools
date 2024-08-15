@@ -1,9 +1,15 @@
 from bs4 import BeautifulSoup
+from PTTools import ForceField
+from PTTools import vec2param
+from PTTools import param2vec
+
+import numpy as np
 
 
-class OMMReader:
 
-    def __init__(self, filename):
+class OpenMMReader:
+
+    def __init__(self, filename: str):
         with open(filename, 'r', encoding='utf-8') as file:
             data = file.read()
 
@@ -89,7 +95,9 @@ class OMMReader:
                            'phase4': float(improper.get('phase4'))} for improper in impropers_data]
         return impropers_list
 
-
+    
+    def get_forcefield(self):
+        return ForceField(self.get_pairs(), self.get_bonds(), self.get_angles(), self.get_dihedrals(), self.get_impropers())
 
 class POSCARReader:
     
@@ -100,44 +108,45 @@ class POSCARReader:
         self.__intypes = []
         self.__inamounts = []
         self.is_fractional = False
+        
+        # It is necessary to convert lattice to triangular form
+        self.__transition = None
+        
         with open(filename, 'r', encoding='utf-8') as file:
-            count = 0
             typecount = 0
             typeswitch = 0
-            for line in file:
-                if count <= 1:
-                    count += 1
-                elif count >= 2 and count <= 4:
-                    self.lattice.append([float(i) for i in line.split()])
-                    count += 1
+            for count, line in enumerate(file):
+                if count >= 2 and count <= 4:
+                    self.lattice.append(np.array([float(i) for i in line.split()]))
                 elif count == 5:
+                    # Convertaion to triangular form
+                    self.__transition = self.lattice
+                    self.lattice = param2vec(vec2param(np.array(self.lattice)))
+                    self.__transition = np.matmul(np.linalg.inv(self.__transition), self.lattice)
+                    
                     self.__intypes = line.split()
-                    count += 1
                 elif count == 6:
                     self.__inamounts = [int(i) for i in line.split()]
-                    count += 1
                 elif count == 7:
                     if "Fractional" in line:
                         self.is_fractional = True
-                    count += 1
                 elif count >= 7:
-                    self.atoms.append([float(i) for i in line.split()])
+                    self.atoms.append(np.matmul(self.__transition, np.array([float(i) for i in line.split()])))
                     self.types.append(self.__intypes[typeswitch])
                     typecount += 1
                     if self.__inamounts[typeswitch] == typecount:
                         typeswitch += 1
                         typecount = 0
-                    count += 1
-    
+        
     
     def get_types(self) -> list:
         return self.types
     
-    
+
     def get_atoms(self) -> list:
         return self.atoms
-        
-    
-    def get_lattice(self) -> list:
+
+
+    def get_lattice(self) -> np.array:
         return self.lattice
         
