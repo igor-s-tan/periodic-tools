@@ -14,13 +14,17 @@ class OpenMMReader:
             data = file.read()
 
         self.bs = BeautifulSoup(data, 'xml')
-
+        self.atom_dict = dict()
         self.atom_types = self.get_types()
+       
 
     # [type]
     def get_types(self) -> list:
         types_data = self.bs.select('AtomTypes > Type')
-        types_list = [atom_type.get('element') for atom_type in types_data]
+        types_list = []
+        for i, atom_type in enumerate(types_data):
+            self.atom_dict[atom_type.get('class')] = i
+            types_list.append(atom_type.get('element'))
         return types_list
 
     # [mass]
@@ -33,6 +37,7 @@ class OpenMMReader:
     def get_charges(self) -> list:
         atoms_data = self.bs.select('NonbondedForce > Atom')
         charges_list = [float(atom_type.get('charge')) for atom_type in atoms_data]
+        
         return charges_list
 
     # [sigma, epsilon]
@@ -45,8 +50,8 @@ class OpenMMReader:
     # [atom1, atom2, length, k]
     def get_bonds(self) -> list:
         bonds_data = self.bs.select('HarmonicBondForce > Bond')
-        bonds_list = [{'atom1': int(bond.get('class1')),
-                       'atom2': int(bond.get('class2')),
+        bonds_list = [{'atom1': self.atom_dict[bond.get('class1')],
+                       'atom2': self.atom_dict[bond.get('class2')],
                        'length': float(bond.get('length')),
                        'k': float(bond.get('k'))} for bond in bonds_data]
         return bonds_list
@@ -54,9 +59,9 @@ class OpenMMReader:
     # [atom1, atom2, atom3, angle, k]
     def get_angles(self) -> list:
         angles_data = self.bs.select('HarmonicAngleForce > Angle')
-        angles_list = [{'atom1': int(angle.get('class1')),
-                        'atom2': int(angle.get('class2')),
-                        'atom3': int(angle.get('class3')),
+        angles_list = [{'atom1': self.atom_dict[angle.get('class1')],
+                        'atom2': self.atom_dict[angle.get('class2')],
+                        'atom3': self.atom_dict[angle.get('class3')],
                         'angle': float(angle.get('angle')),
                         'k': float(angle.get('k'))} for angle in angles_data]
         return angles_list
@@ -64,10 +69,10 @@ class OpenMMReader:
     # [atom1, atom2, atom3, atom4, k1, k2, k3, k4, phase1, phase2, phase3, phase4]
     def get_dihedrals(self) -> list:
         dihedrals_data = self.bs.select('PeriodicTorsionForce > Proper')
-        dihedrals_list = [{'atom1': int(dihedral.get('class1')),
-                           'atom2': int(dihedral.get('class2')),
-                           'atom3': int(dihedral.get('class3')),
-                           'atom4': int(dihedral.get('class4')),
+        dihedrals_list = [{'atom1': self.atom_dict[dihedral.get('class1')],
+                           'atom2': self.atom_dict[dihedral.get('class2')],
+                           'atom3': self.atom_dict[dihedral.get('class3')],
+                           'atom4': self.atom_dict[dihedral.get('class4')],
                            'k1': float(dihedral.get('k1')),
                            'k2': float(dihedral.get('k2')),
                            'k3': float(dihedral.get('k3')),
@@ -81,10 +86,10 @@ class OpenMMReader:
     # [atom1, atom2, atom3, atom4, k1, k2, k3, k4, phase1, phase2, phase3, phase4]
     def get_impropers(self) -> list:
         impropers_data = self.bs.select('PeriodicTorsionForce > Improper')
-        impropers_list = [{'atom1': int(improper.get('class1')),
-                           'atom2': int(improper.get('class2')),
-                           'atom3': int(improper.get('class3')),
-                           'atom4': int(improper.get('class4')),
+        impropers_list = [{'atom1': self.atom_dict[improper.get('class1')],
+                           'atom2':  self.atom_dict[improper.get('class2')] ,
+                           'atom3':  self.atom_dict[improper.get('class3')] ,
+                           'atom4':  self.atom_dict[improper.get('class4')] ,
                            'k1': float(improper.get('k1')),
                            'k2': float(improper.get('k2')),
                            'k3': float(improper.get('k3')),

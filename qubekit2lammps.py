@@ -50,7 +50,6 @@ else:
     masses = []
 
     cmolecules = crystal.get_crystal_molamounts()
-    print(cmolecules)
 
     left = 0
     right = 0

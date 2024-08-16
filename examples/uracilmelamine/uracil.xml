@@ -1,0 +1,136 @@
+<ForceField>
+<AtomTypes>
+<Type name="O_HDC_0" class="clO_HDC_0" mass="15.999" element="O" />
+<Type name="C_HDC_1" class="clC_HDC_1" mass="12.011" element="C" />
+<Type name="C_HDC_2" class="clC_HDC_2" mass="12.011" element="C" />
+<Type name="H_HDC_3" class="clH_HDC_3" mass="1.008" element="H" />
+<Type name="C_HDC_4" class="clC_HDC_4" mass="12.011" element="C" />
+<Type name="H_HDC_5" class="clH_HDC_5" mass="1.008" element="H" />
+<Type name="N_HDC_6" class="clN_HDC_6" mass="14.007" element="N" />
+<Type name="H_HDC_7" class="clH_HDC_7" mass="1.008" element="H" />
+<Type name="C_HDC_8" class="clC_HDC_8" mass="12.011" element="C" />
+<Type name="O_HDC_9" class="clO_HDC_9" mass="15.999" element="O" />
+<Type name="N_HDC_10" class="clN_HDC_10" mass="14.007" element="N" />
+<Type name="H_HDC_11" class="clH_HDC_11" mass="1.008" element="H" />
+</AtomTypes>
+<Residues>
+<Residue name="HDC">
+<Atom name="O1" type="O_HDC_0" />
+<Atom name="C1" type="C_HDC_1" />
+<Atom name="C2" type="C_HDC_2" />
+<Atom name="H1" type="H_HDC_3" />
+<Atom name="C3" type="C_HDC_4" />
+<Atom name="H2" type="H_HDC_5" />
+<Atom name="N1" type="N_HDC_6" />
+<Atom name="H3" type="H_HDC_7" />
+<Atom name="C4" type="C_HDC_8" />
+<Atom name="O2" type="O_HDC_9" />
+<Atom name="N2" type="N_HDC_10" />
+<Atom name="H4" type="H_HDC_11" />
+<Bond atomName1="O1" atomName2="C1" />
+<Bond atomName1="C1" atomName2="C2" />
+<Bond atomName1="C1" atomName2="N2" />
+<Bond atomName1="C2" atomName2="H1" />
+<Bond atomName1="C2" atomName2="C3" />
+<Bond atomName1="C3" atomName2="H2" />
+<Bond atomName1="C3" atomName2="N1" />
+<Bond atomName1="N1" atomName2="H3" />
+<Bond atomName1="N1" atomName2="C4" />
+<Bond atomName1="C4" atomName2="O2" />
+<Bond atomName1="C4" atomName2="N2" />
+<Bond atomName1="N2" atomName2="H4" />
+</Residue>
+</Residues>
+<HarmonicBondForce>
+<Bond length="0.1209550258265367" k="663313.9169428461" class1="clO_HDC_0" class2="clC_HDC_1" />
+<Bond length="0.14510287893337703" k="236178.2591640406" class1="clC_HDC_1" class2="clC_HDC_2" />
+<Bond length="0.10787631379307475" k="336891.22318887187" class1="clC_HDC_2" class2="clH_HDC_3" />
+<Bond length="0.13414319767667077" k="460416.9340282725" class1="clC_HDC_2" class2="clC_HDC_4" />
+<Bond length="0.10829077737289028" k="325608.7231816231" class1="clC_HDC_4" class2="clH_HDC_5" />
+<Bond length="0.1363701870129739" k="328522.37031771813" class1="clC_HDC_4" class2="clN_HDC_6" />
+<Bond length="0.1006010598530002" k="433471.0664762321" class1="clN_HDC_6" class2="clH_HDC_7" />
+<Bond length="0.13819212145573653" k="252822.26486700666" class1="clN_HDC_6" class2="clC_HDC_8" />
+<Bond length="0.12073012478612044" k="659128.7285172741" class1="clC_HDC_8" class2="clO_HDC_9" />
+<Bond length="0.1372379864621289" k="275723.83825790085" class1="clC_HDC_8" class2="clN_HDC_10" />
+<Bond length="0.10099715738828371" k="419827.2525078079" class1="clN_HDC_10" class2="clH_HDC_11" />
+<Bond length="0.13988000461478053" k="247381.240359957" class1="clN_HDC_10" class2="clC_HDC_1" />
+</HarmonicBondForce>
+<HarmonicAngleForce>
+<Angle angle="2.201549506818322" k="560.9487171991663" class1="clO_HDC_0" class2="clC_HDC_1" class3="clC_HDC_2" />
+<Angle angle="2.0994801332878255" k="631.0400280706336" class1="clO_HDC_0" class2="clC_HDC_1" class3="clN_HDC_10" />
+<Angle angle="1.9821556670727833" k="985.8185695704009" class1="clC_HDC_2" class2="clC_HDC_1" class3="clN_HDC_10" />
+<Angle angle="2.0658003727735252" k="256.25248320557597" class1="clC_HDC_1" class2="clC_HDC_2" class3="clH_HDC_3" />
+<Angle angle="2.0880407733679993" k="692.9202436826738" class1="clC_HDC_1" class2="clC_HDC_2" class3="clC_HDC_4" />
+<Angle angle="2.1293441610350214" k="258.23576102732295" class1="clH_HDC_3" class2="clC_HDC_2" class3="clC_HDC_4" />
+<Angle angle="2.1386521795511597" k="286.762569533144" class1="clC_HDC_2" class2="clC_HDC_4" class3="clH_HDC_5" />
+<Angle angle="2.129754627820245" k="698.5366307278919" class1="clC_HDC_2" class2="clC_HDC_4" class3="clN_HDC_6" />
+<Angle angle="2.0147784997439957" k="308.4949881666953" class1="clH_HDC_5" class2="clC_HDC_4" class3="clN_HDC_6" />
+<Angle angle="2.1185835451771613" k="296.46474916190954" class1="clC_HDC_4" class2="clN_HDC_6" class3="clH_HDC_7" />
+<Angle angle="2.15563096200604" k="733.8467305193909" class1="clC_HDC_4" class2="clN_HDC_6" class3="clC_HDC_8" />
+<Angle angle="2.0089707998868507" k="289.1333344946664" class1="clH_HDC_7" class2="clN_HDC_6" class3="clC_HDC_8" />
+<Angle angle="2.1414826989028906" k="551.6282509853057" class1="clN_HDC_6" class2="clC_HDC_8" class3="clO_HDC_9" />
+<Angle angle="1.97400875407652" k="1116.7797347341407" class1="clN_HDC_6" class2="clC_HDC_8" class3="clN_HDC_10" />
+<Angle angle="2.1676938541954147" k="556.1053776508608" class1="clO_HDC_9" class2="clC_HDC_8" class3="clN_HDC_10" />
+<Angle angle="2.2367798299915607" k="706.8325442666154" class1="clC_HDC_1" class2="clN_HDC_10" class3="clC_HDC_8" />
+<Angle angle="2.028903454123848" k="289.5232544650562" class1="clC_HDC_1" class2="clN_HDC_10" class3="clH_HDC_11" />
+<Angle angle="2.017502023042739" k="280.52900531977826" class1="clC_HDC_8" class2="clN_HDC_10" class3="clH_HDC_11" />
+</HarmonicAngleForce>
+<PeriodicTorsionForce ordering="smirnoff">
+<Proper class1="clO_HDC_0" class2="clC_HDC_1" class3="clC_HDC_2" class4="clH_HDC_3" phase1="0.0" k1="0.0" periodicity1="1" phase2="3.141592653589793" k2="4.173190890070053" periodicity2="2" phase3="0.0" k3="0.0" periodicity3="3" phase4="3.141592653589793" k4="0.0" periodicity4="4" />
+<Proper class1="clO_HDC_0" class2="clC_HDC_1" class3="clC_HDC_2" class4="clC_HDC_4" phase1="0.0" k1="0.0" periodicity1="1" phase2="3.141592653589793" k2="0.9822507508279056" periodicity2="2" phase3="0.0" k3="1.9863410844530769" periodicity3="3" phase4="3.141592653589793" k4="0.0" periodicity4="4" />
+<Proper class1="clO_HDC_0" class2="clC_HDC_1" class3="clN_HDC_10" class4="clC_HDC_8" phase1="0.0" k1="-0.20151306284204928" periodicity1="1" phase2="3.141592653589793" k2="7.569054279772552" periodicity2="2" phase3="0.0" k3="0.0" periodicity3="3" phase4="3.141592653589793" k4="0.0" periodicity4="4" />
+<Proper class1="clO_HDC_0" class2="clC_HDC_1" class3="clN_HDC_10" class4="clH_HDC_11" phase1="0.0" k1="3.7308670004513265" periodicity1="1" phase2="3.141592653589793" k2="2.0338395226397696" periodicity2="2" phase3="0.0" k3="0.0" periodicity3="3" phase4="3.141592653589793" k4="0.0" periodicity4="4" />
+<Proper class1="clC_HDC_1" class2="clC_HDC_2" class3="clC_HDC_4" class4="clH_HDC_5" phase1="0.0" k1="0.0" periodicity1="1" phase2="3.141592653589793" k2="22.15362310384957" periodicity2="2" phase3="0.0" k3="0.0" periodicity3="3" phase4="3.141592653589793" k4="0.0" periodicity4="4" />
+<Proper class1="clC_HDC_1" class2="clC_HDC_2" class3="clC_HDC_4" class4="clN_HDC_6" phase1="0.0" k1="0.0" periodicity1="1" phase2="3.141592653589793" k2="22.15362310384957" periodicity2="2" phase3="0.0" k3="0.0" periodicity3="3" phase4="3.141592653589793" k4="0.0" periodicity4="4" />
+<Proper class1="clC_HDC_1" class2="clN_HDC_10" class3="clC_HDC_8" class4="clN_HDC_6" phase1="0.0" k1="-0.20151306284204928" periodicity1="1" phase2="3.141592653589793" k2="7.569054279772552" periodicity2="2" phase3="0.0" k3="0.0" periodicity3="3" phase4="3.141592653589793" k4="0.0" periodicity4="4" />
+<Proper class1="clC_HDC_1" class2="clN_HDC_10" class3="clC_HDC_8" class4="clO_HDC_9" phase1="0.0" k1="-0.20151306284204928" periodicity1="1" phase2="3.141592653589793" k2="7.569054279772552" periodicity2="2" phase3="0.0" k3="0.0" periodicity3="3" phase4="3.141592653589793" k4="0.0" periodicity4="4" />
+<Proper class1="clC_HDC_2" class2="clC_HDC_1" class3="clN_HDC_10" class4="clC_HDC_8" phase1="0.0" k1="-0.20151306284204928" periodicity1="1" phase2="3.141592653589793" k2="7.569054279772552" periodicity2="2" phase3="0.0" k3="0.0" periodicity3="3" phase4="3.141592653589793" k4="0.0" periodicity4="4" />
+<Proper class1="clC_HDC_2" class2="clC_HDC_1" class3="clN_HDC_10" class4="clH_HDC_11" phase1="0.0" k1="-0.20151306284204928" periodicity1="1" phase2="3.141592653589793" k2="7.569054279772552" periodicity2="2" phase3="0.0" k3="0.0" periodicity3="3" phase4="3.141592653589793" k4="0.0" periodicity4="4" />
+<Proper class1="clC_HDC_2" class2="clC_HDC_4" class3="clN_HDC_6" class4="clH_HDC_7" phase1="0.0" k1="0.0" periodicity1="1" phase2="3.141592653589793" k2="2.9350078297984674" periodicity2="2" phase3="0.0" k3="0.0" periodicity3="3" phase4="3.141592653589793" k4="0.0" periodicity4="4" />
+<Proper class1="clC_HDC_2" class2="clC_HDC_4" class3="clN_HDC_6" class4="clC_HDC_8" phase1="0.0" k1="0.0" periodicity1="1" phase2="3.141592653589793" k2="2.9350078297984674" periodicity2="2" phase3="0.0" k3="0.0" periodicity3="3" phase4="3.141592653589793" k4="0.0" periodicity4="4" />
+<Proper class1="clH_HDC_3" class2="clC_HDC_2" class3="clC_HDC_1" class4="clN_HDC_10" phase1="0.0" k1="0.0" periodicity1="1" phase2="3.141592653589793" k2="4.173190890070053" periodicity2="2" phase3="0.0" k3="0.0" periodicity3="3" phase4="3.141592653589793" k4="0.0" periodicity4="4" />
+<Proper class1="clH_HDC_3" class2="clC_HDC_2" class3="clC_HDC_4" class4="clH_HDC_5" phase1="0.0" k1="0.0" periodicity1="1" phase2="3.141592653589793" k2="22.15362310384957" periodicity2="2" phase3="0.0" k3="0.0" periodicity3="3" phase4="3.141592653589793" k4="0.0" periodicity4="4" />
+<Proper class1="clH_HDC_3" class2="clC_HDC_2" class3="clC_HDC_4" class4="clN_HDC_6" phase1="0.0" k1="0.0" periodicity1="1" phase2="3.141592653589793" k2="22.15362310384957" periodicity2="2" phase3="0.0" k3="0.0" periodicity3="3" phase4="3.141592653589793" k4="0.0" periodicity4="4" />
+<Proper class1="clC_HDC_4" class2="clC_HDC_2" class3="clC_HDC_1" class4="clN_HDC_10" phase1="0.0" k1="0.0" periodicity1="1" phase2="3.141592653589793" k2="4.173190890070053" periodicity2="2" phase3="0.0" k3="0.0" periodicity3="3" phase4="3.141592653589793" k4="0.0" periodicity4="4" />
+<Proper class1="clC_HDC_4" class2="clN_HDC_6" class3="clC_HDC_8" class4="clO_HDC_9" phase1="0.0" k1="-0.20151306284204928" periodicity1="1" phase2="3.141592653589793" k2="7.569054279772552" periodicity2="2" phase3="0.0" k3="0.0" periodicity3="3" phase4="3.141592653589793" k4="0.0" periodicity4="4" />
+<Proper class1="clC_HDC_4" class2="clN_HDC_6" class3="clC_HDC_8" class4="clN_HDC_10" phase1="0.0" k1="-0.20151306284204928" periodicity1="1" phase2="3.141592653589793" k2="7.569054279772552" periodicity2="2" phase3="0.0" k3="0.0" periodicity3="3" phase4="3.141592653589793" k4="0.0" periodicity4="4" />
+<Proper class1="clH_HDC_5" class2="clC_HDC_4" class3="clN_HDC_6" class4="clH_HDC_7" phase1="0.0" k1="0.0" periodicity1="1" phase2="3.141592653589793" k2="2.9350078297984674" periodicity2="2" phase3="0.0" k3="0.0" periodicity3="3" phase4="3.141592653589793" k4="0.0" periodicity4="4" />
+<Proper class1="clH_HDC_5" class2="clC_HDC_4" class3="clN_HDC_6" class4="clC_HDC_8" phase1="0.0" k1="0.0" periodicity1="1" phase2="3.141592653589793" k2="2.9350078297984674" periodicity2="2" phase3="0.0" k3="0.0" periodicity3="3" phase4="3.141592653589793" k4="0.0" periodicity4="4" />
+<Proper class1="clN_HDC_6" class2="clC_HDC_8" class3="clN_HDC_10" class4="clH_HDC_11" phase1="0.0" k1="-0.20151306284204928" periodicity1="1" phase2="3.141592653589793" k2="7.569054279772552" periodicity2="2" phase3="0.0" k3="0.0" periodicity3="3" phase4="3.141592653589793" k4="0.0" periodicity4="4" />
+<Proper class1="clH_HDC_7" class2="clN_HDC_6" class3="clC_HDC_8" class4="clO_HDC_9" phase1="0.0" k1="3.7308670004513265" periodicity1="1" phase2="3.141592653589793" k2="2.0338395226397696" periodicity2="2" phase3="0.0" k3="0.0" periodicity3="3" phase4="3.141592653589793" k4="0.0" periodicity4="4" />
+<Proper class1="clH_HDC_7" class2="clN_HDC_6" class3="clC_HDC_8" class4="clN_HDC_10" phase1="0.0" k1="-0.20151306284204928" periodicity1="1" phase2="3.141592653589793" k2="7.569054279772552" periodicity2="2" phase3="0.0" k3="0.0" periodicity3="3" phase4="3.141592653589793" k4="0.0" periodicity4="4" />
+<Proper class1="clO_HDC_9" class2="clC_HDC_8" class3="clN_HDC_10" class4="clH_HDC_11" phase1="0.0" k1="3.7308670004513265" periodicity1="1" phase2="3.141592653589793" k2="2.0338395226397696" periodicity2="2" phase3="0.0" k3="0.0" periodicity3="3" phase4="3.141592653589793" k4="0.0" periodicity4="4" />
+<Improper class1="clC_HDC_1" class2="clO_HDC_0" class3="clC_HDC_2" class4="clN_HDC_10" phase1="0.0" k1="0.0" periodicity1="1" phase2="3.141592653589793" k2="1.5341333333333336" periodicity2="2" phase3="0.0" k3="0.0" periodicity3="3" phase4="3.141592653589793" k4="0.0" periodicity4="4" />
+<Improper class1="clC_HDC_1" class2="clC_HDC_2" class3="clN_HDC_10" class4="clO_HDC_0" phase1="0.0" k1="0.0" periodicity1="1" phase2="3.141592653589793" k2="1.5341333333333336" periodicity2="2" phase3="0.0" k3="0.0" periodicity3="3" phase4="3.141592653589793" k4="0.0" periodicity4="4" />
+<Improper class1="clC_HDC_1" class2="clN_HDC_10" class3="clO_HDC_0" class4="clC_HDC_2" phase1="0.0" k1="0.0" periodicity1="1" phase2="3.141592653589793" k2="1.5341333333333336" periodicity2="2" phase3="0.0" k3="0.0" periodicity3="3" phase4="3.141592653589793" k4="0.0" periodicity4="4" />
+<Improper class1="clC_HDC_2" class2="clC_HDC_1" class3="clH_HDC_3" class4="clC_HDC_4" phase1="0.0" k1="0.0" periodicity1="1" phase2="3.141592653589793" k2="1.5341333333333336" periodicity2="2" phase3="0.0" k3="0.0" periodicity3="3" phase4="3.141592653589793" k4="0.0" periodicity4="4" />
+<Improper class1="clC_HDC_2" class2="clH_HDC_3" class3="clC_HDC_4" class4="clC_HDC_1" phase1="0.0" k1="0.0" periodicity1="1" phase2="3.141592653589793" k2="1.5341333333333336" periodicity2="2" phase3="0.0" k3="0.0" periodicity3="3" phase4="3.141592653589793" k4="0.0" periodicity4="4" />
+<Improper class1="clC_HDC_2" class2="clC_HDC_4" class3="clC_HDC_1" class4="clH_HDC_3" phase1="0.0" k1="0.0" periodicity1="1" phase2="3.141592653589793" k2="1.5341333333333336" periodicity2="2" phase3="0.0" k3="0.0" periodicity3="3" phase4="3.141592653589793" k4="0.0" periodicity4="4" />
+<Improper class1="clN_HDC_10" class2="clC_HDC_1" class3="clC_HDC_8" class4="clH_HDC_11" phase1="0.0" k1="0.0" periodicity1="1" phase2="3.141592653589793" k2="1.3946666666666667" periodicity2="2" phase3="0.0" k3="0.0" periodicity3="3" phase4="3.141592653589793" k4="0.0" periodicity4="4" />
+<Improper class1="clN_HDC_10" class2="clC_HDC_8" class3="clH_HDC_11" class4="clC_HDC_1" phase1="0.0" k1="0.0" periodicity1="1" phase2="3.141592653589793" k2="1.3946666666666667" periodicity2="2" phase3="0.0" k3="0.0" periodicity3="3" phase4="3.141592653589793" k4="0.0" periodicity4="4" />
+<Improper class1="clN_HDC_10" class2="clH_HDC_11" class3="clC_HDC_1" class4="clC_HDC_8" phase1="0.0" k1="0.0" periodicity1="1" phase2="3.141592653589793" k2="1.3946666666666667" periodicity2="2" phase3="0.0" k3="0.0" periodicity3="3" phase4="3.141592653589793" k4="0.0" periodicity4="4" />
+<Improper class1="clC_HDC_4" class2="clC_HDC_2" class3="clH_HDC_5" class4="clN_HDC_6" phase1="0.0" k1="0.0" periodicity1="1" phase2="3.141592653589793" k2="1.5341333333333336" periodicity2="2" phase3="0.0" k3="0.0" periodicity3="3" phase4="3.141592653589793" k4="0.0" periodicity4="4" />
+<Improper class1="clC_HDC_4" class2="clH_HDC_5" class3="clN_HDC_6" class4="clC_HDC_2" phase1="0.0" k1="0.0" periodicity1="1" phase2="3.141592653589793" k2="1.5341333333333336" periodicity2="2" phase3="0.0" k3="0.0" periodicity3="3" phase4="3.141592653589793" k4="0.0" periodicity4="4" />
+<Improper class1="clC_HDC_4" class2="clN_HDC_6" class3="clC_HDC_2" class4="clH_HDC_5" phase1="0.0" k1="0.0" periodicity1="1" phase2="3.141592653589793" k2="1.5341333333333336" periodicity2="2" phase3="0.0" k3="0.0" periodicity3="3" phase4="3.141592653589793" k4="0.0" periodicity4="4" />
+<Improper class1="clN_HDC_6" class2="clC_HDC_4" class3="clH_HDC_7" class4="clC_HDC_8" phase1="0.0" k1="0.0" periodicity1="1" phase2="3.141592653589793" k2="1.3946666666666667" periodicity2="2" phase3="0.0" k3="0.0" periodicity3="3" phase4="3.141592653589793" k4="0.0" periodicity4="4" />
+<Improper class1="clN_HDC_6" class2="clH_HDC_7" class3="clC_HDC_8" class4="clC_HDC_4" phase1="0.0" k1="0.0" periodicity1="1" phase2="3.141592653589793" k2="1.3946666666666667" periodicity2="2" phase3="0.0" k3="0.0" periodicity3="3" phase4="3.141592653589793" k4="0.0" periodicity4="4" />
+<Improper class1="clN_HDC_6" class2="clC_HDC_8" class3="clC_HDC_4" class4="clH_HDC_7" phase1="0.0" k1="0.0" periodicity1="1" phase2="3.141592653589793" k2="1.3946666666666667" periodicity2="2" phase3="0.0" k3="0.0" periodicity3="3" phase4="3.141592653589793" k4="0.0" periodicity4="4" />
+<Improper class1="clC_HDC_8" class2="clN_HDC_6" class3="clO_HDC_9" class4="clN_HDC_10" phase1="0.0" k1="0.0" periodicity1="1" phase2="3.141592653589793" k2="1.5341333333333336" periodicity2="2" phase3="0.0" k3="0.0" periodicity3="3" phase4="3.141592653589793" k4="0.0" periodicity4="4" />
+<Improper class1="clC_HDC_8" class2="clO_HDC_9" class3="clN_HDC_10" class4="clN_HDC_6" phase1="0.0" k1="0.0" periodicity1="1" phase2="3.141592653589793" k2="1.5341333333333336" periodicity2="2" phase3="0.0" k3="0.0" periodicity3="3" phase4="3.141592653589793" k4="0.0" periodicity4="4" />
+<Improper class1="clC_HDC_8" class2="clN_HDC_10" class3="clN_HDC_6" class4="clO_HDC_9" phase1="0.0" k1="0.0" periodicity1="1" phase2="3.141592653589793" k2="1.5341333333333336" periodicity2="2" phase3="0.0" k3="0.0" periodicity3="3" phase4="3.141592653589793" k4="0.0" periodicity4="4" />
+</PeriodicTorsionForce>
+<NonbondedForce coulomb14scale="0.8333333333" lj14scale="0.5" combination="amber">
+<Atom type="O_HDC_0" charge="-0.521576" sigma="0.292114037614877" epsilon="0.4912782907952077" />
+<Atom type="C_HDC_1" charge="0.61049" sigma="0.3053915327883281" epsilon="0.3339201969897996" />
+<Atom type="C_HDC_2" charge="-0.385569" sigma="0.349591893783274" epsilon="0.3339201969897998" />
+<Atom type="H_HDC_3" charge="0.165258" sigma="0.23527202005006168" epsilon="0.10622394319478752" />
+<Atom type="C_HDC_4" charge="0.133051" sigma="0.32291552553152963" epsilon="0.3339201969897997" />
+<Atom type="H_HDC_5" charge="0.108879" sigma="0.23246411788687815" epsilon="0.1062239431947875" />
+<Atom type="N_HDC_6" charge="-0.403588" sigma="0.3067027112597902" epsilon="0.44212889628183655" />
+<Atom type="H_HDC_7" charge="0.327118" sigma="0.1472119195199558" epsilon="0.6688023414173765" />
+<Atom type="C_HDC_8" charge="0.70444" sigma="0.2994026815307173" epsilon="0.33392019698979947" />
+<Atom type="O_HDC_9" charge="-0.575336" sigma="0.293864471841279" epsilon="0.49127829079520735" />
+<Atom type="N_HDC_10" charge="-0.503889" sigma="0.31241135260453345" epsilon="0.4421288962818364" />
+<Atom type="H_HDC_11" charge="0.340722" sigma="0.1547521439115864" epsilon="0.6688023414173764" />
+</NonbondedForce>
+</ForceField>
