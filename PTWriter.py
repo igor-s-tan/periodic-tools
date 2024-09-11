@@ -9,7 +9,7 @@ class FFWriter:
                  types: list,
                  forcefields: list,
                  atoms: list,
-                 molamounts: list,
+                 molamounts: dict,
                  molecules: list,
                  cell=None,
                  virtual_sites=None):
@@ -38,7 +38,7 @@ class FFWriter:
         
         for cluster in self.atoms:
             atoms_numbers += len(cluster)
-        
+
         for i, ff in enumerate(self.forcefields):
             bonds_numbers += len(ff.bonds) * self.molamounts[i]
             angles_numbers += len(ff.angles) * self.molamounts[i]

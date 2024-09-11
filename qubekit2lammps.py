@@ -42,30 +42,32 @@ else:
     crystal.parametrize()
 
     ctypes = [(k, v) for k, v in crystal.get_crystal_atoms_types().items()]
-
+    print(f"ctypes: {ctypes}")
     atoms_rearr = []
     types_rearr = []
     molecules_rearr = []
     charges = []
     masses = []
 
+    #cmolecules = dict(sorted(crystal.get_crystal_molamounts().items()))
     cmolecules = crystal.get_crystal_molamounts()
-
     left = 0
     right = 0
-
+    print(cmolecules)
+    print(len(graphs[1].nodes))
     for graph, amount in cmolecules.items():
 
         for k in range(amount):
             right += len(graphs[graph].nodes)
-            
+            print(f"graph length: {len(graphs[graph].nodes)}")
             # this thing here takes molecules one by one from an array and sorts its atoms
             tempsorted = sorted(ctypes[left:right], key=lambda x: x[1])
             
             atoms_rearr.append([atoms[tempsorted[i][0]] for i in range(len(graphs[graph].nodes))])
             types_rearr.append([tempsorted[i][1] for i in range(len(graphs[graph].nodes))])
-            
+                
             molecules_rearr.append(graph)
+            print(molecules_rearr)
             
             charges.append(omms[graph].get_charges())
             
@@ -74,7 +76,7 @@ else:
         masses.append(omms[graph].get_masses())
 
 
-    writer = FFWriter(args.crystal + ".data", charges, masses, types_rearr, forcefields, atoms_rearr, list(cmolecules.values()), molecules_rearr, cell)
+    writer = FFWriter(args.crystal + ".data", charges, masses, types_rearr, forcefields, atoms_rearr, cmolecules, molecules_rearr, cell)
 
     writer.writeLammps()
     

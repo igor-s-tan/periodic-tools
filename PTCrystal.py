@@ -37,6 +37,8 @@ class Crystal:
         
         # making graphs
         viewed = set()
+        table = dict()
+        global_shift = 0
         for i in range(self.natoms):
             # skip if current node has already been viewed
             if i in viewed:
@@ -46,32 +48,37 @@ class Crystal:
             
             # update viewed nodes set
             viewed.update(molecule)
-            
             # making table of shifts to assign types correctly
-            table = []
-            shift = 0
-            for graph in self.graphs:
-                table.append(shift)
-                shift += len(graph.nodes)
+            
+
+            # for graph in self.graphs:
+                # table.append(shift)
+                # shift += len(graph.nodes)
             
             # solving isomorphism problem
             for k, graph in enumerate(self.graphs):
                 isodict = nx.vf2pp_isomorphism(big_graph.subgraph(molecule), graph)
+                print(f"Crystals: {isodict}")
                 if isodict is not None:
                     if k not in self.molamounts:
                         self.molamounts[k] = 0
+                    if graph not in table:
+                        global_shift += len(graph.nodes)
+                        table[graph] = global_shift - len(graph.nodes)
                     for key in isodict:
                         if key < self.natoms:
                             self.molamounts[k] += 1 
-                        isodict[key] += table[k]
+                        isodict[key] += table[graph]
                     break
-            
+            print(f"table: {table}")
+            print(global_shift)
             # in case we caught a fragment on the egde of the cell
             if isodict is None:
                 continue
               
             for k in isodict:
-                self.crystal_atoms_types[k - (k // self.natoms * self.natoms)] = isodict[k]            
+                self.crystal_atoms_types[k - (k // self.natoms * self.natoms)] = isodict[k]
+                print(f"dunno {isodict[k]}")
             
             # stop if full atoms pack has already been created
             if len(self.crystal_atoms_types) >= self.natoms * 2:
