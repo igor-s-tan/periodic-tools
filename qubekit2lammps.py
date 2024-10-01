@@ -42,7 +42,7 @@ else:
     crystal.parametrize()
 
     ctypes = [(k, v) for k, v in crystal.get_crystal_atoms_types().items()]
-    print(f"ctypes: {ctypes}")
+
     atoms_rearr = []
     types_rearr = []
     molecules_rearr = []
@@ -53,13 +53,12 @@ else:
     cmolecules = crystal.get_crystal_molamounts()
     left = 0
     right = 0
-    print(cmolecules)
-    print(len(graphs[1].nodes))
+
     for graph, amount in cmolecules.items():
 
         for k in range(amount):
             right += len(graphs[graph].nodes)
-            print(f"graph length: {len(graphs[graph].nodes)}")
+
             # this thing here takes molecules one by one from an array and sorts its atoms
             tempsorted = sorted(ctypes[left:right], key=lambda x: x[1])
             
@@ -67,7 +66,7 @@ else:
             types_rearr.append([tempsorted[i][1] for i in range(len(graphs[graph].nodes))])
                 
             molecules_rearr.append(graph)
-            print(molecules_rearr)
+
             
             charges.append(omms[graph].get_charges())
             

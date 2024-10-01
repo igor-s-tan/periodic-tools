@@ -58,7 +58,6 @@ class Crystal:
             # solving isomorphism problem
             for k, graph in enumerate(self.graphs):
                 isodict = nx.vf2pp_isomorphism(big_graph.subgraph(molecule), graph)
-                print(f"Crystals: {isodict}")
                 if isodict is not None:
                     if k not in self.molamounts:
                         self.molamounts[k] = 0
@@ -70,15 +69,12 @@ class Crystal:
                             self.molamounts[k] += 1 
                         isodict[key] += table[graph]
                     break
-            print(f"table: {table}")
-            print(global_shift)
             # in case we caught a fragment on the egde of the cell
             if isodict is None:
                 continue
               
             for k in isodict:
                 self.crystal_atoms_types[k - (k // self.natoms * self.natoms)] = isodict[k]
-                print(f"dunno {isodict[k]}")
             
             # stop if full atoms pack has already been created
             if len(self.crystal_atoms_types) >= self.natoms * 2:
